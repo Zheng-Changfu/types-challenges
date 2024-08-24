@@ -12,10 +12,10 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmit": true
   },
   "include": [
     "*.ts"
   ],
-  
 }
