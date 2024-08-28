@@ -45,7 +45,9 @@ type Expected3 = {
 // ============= Your Code Here =============
 type Chainable<R = {}> = {
   option<K extends string, V>(key: K, value: V): Chainable<Omit<R, K> & { [P in K]: V }>
-  get(): R
+  get(): {
+    [P in keyof R]: R[P]
+  }
 }
 
 

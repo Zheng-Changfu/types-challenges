@@ -4,3 +4,4 @@
 | `${infer A}` | `/(.*)/` |
 | `${infer A}${infer B}` | 	`/(.+?)(.*)/` | 
 | `${infer A}${infer B}${infer C}` |`/(.+?)(.+?)(.*)/` | 
+| `${infer A}abc${infer B}${infer C}` | `/(.*)abc/(.+?)(.*)` |
