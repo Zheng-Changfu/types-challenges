@@ -8,7 +8,6 @@ interface Model {
 }
 
 type ModelEntries = ['name', string] | ['age', number] | ['locations', string[] | null]
-
 type cases = [
   Expect<Equal<ObjectEntries<Model>, ModelEntries>>,
   Expect<Equal<ObjectEntries<Partial<Model>>, ModelEntries>>,
@@ -19,5 +18,4 @@ type cases = [
 
 
 // ============= Your Code Here =============
-type ObjectEntries<T, R = Required<T>, K extends keyof R = keyof R> = K extends keyof R ? [K, R[K]] : never
-type A = ObjectEntries<{ key?: undefined }>
+type ObjectEntries<T, K extends keyof T = keyof T> = K extends keyof T ? [K, T[K] extends undefined ? undefined : Required<T>[K]] : never
