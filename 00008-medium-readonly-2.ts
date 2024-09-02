@@ -30,7 +30,7 @@ interface Expected {
 
 
 // ============= Your Code Here =============
-type MyReadonly2<T, K extends keyof any> =  {
+type MyReadonly2<T, K extends keyof any> = {
   readonly [P in K]: T[P]
 }
 type A = MyReadonly2<Todo1, 'title' | 'description'>

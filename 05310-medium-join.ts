@@ -11,9 +11,10 @@ type cases = [
 
 
 // ============= Your Code Here =============
-type Join<T extends string[], U extends string | number = ','> =
-  T extends [infer First extends string, ...infer Last extends string[]]
-  ? Last extends []
-  ? `${First}`
-  : `${First}${U}${Join<Last, U>}`
-  : ''
+type Join = any
+// type Join<T extends string[], U extends string | number = ','> =
+//   T extends [infer First extends string, ...infer Last extends string[]]
+//   ? Last extends []
+//   ? `${First}`
+//   : `${First}${U}${Join<Last, U>}`
+//   : ''
