@@ -15,7 +15,7 @@ type cases = [
 type ReplaceFirst<T extends readonly unknown[], S, R,O extends any[] = []> = T extends [infer X,...infer Y]
 ? X extends S 
   ? [R,...Y]
-  : ReplaceFirst<Y,S,R>
+  : [X,...ReplaceFirst<Y,S,R>]
 : T
 
 type A = ReplaceFirst<[1, 2, 3], 3, 4>
