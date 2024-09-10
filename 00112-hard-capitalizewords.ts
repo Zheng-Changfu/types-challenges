@@ -13,9 +13,9 @@ type cases = [
 
 
 // ============= Your Code Here =============
-type CapitalizeWords<S extends string> = S extends `${infer O} ${infer L}` 
-? `${Capitalize<O>} ${CapitalizeWords<L>}` 
-: Capitalize<S>;
-  
+type CapitalizeRest<S extends string> = S extends `${infer F}${infer R}`
+    ? `${F}${CapitalizeRest<Uppercase<F> extends Lowercase<F> ? Capitalize<R> : R>}`
+    : S;
+type CapitalizeWords<S extends string> = Capitalize<CapitalizeRest<S>>;
 
-type A = CapitalizeWords<'foo bar'>
+type A = CapitalizeWords<'foo bar.hello,world'>
